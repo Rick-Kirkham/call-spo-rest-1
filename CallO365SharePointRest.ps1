@@ -39,4 +39,4 @@ $readStream = New-Object System.IO.StreamReader $stream
 $responseData=$readStream.ReadToEnd()
 
 #Return the response as JSON
-$responseData
+($responseData | ConvertFrom-JSON).d
