@@ -51,9 +51,9 @@ $request.Accept = "application/json;odata=verbose"
 $request.Credentials = $creds 
 
 # Set the verb (and the verb header, if needed).
-if (($HTTPVerb -ne [Microsoft.PowerShell.Commands.WebRequestMethod]::Get) -and ($HTTPVerb -ne [Microsoft.PowerShell.Commands.WebRequestMethod]::Post))
+if (($HTTPVerb -ne [Microsoft.PowerShell.Commands.WebRequestMethod]::Get) -and ($HTTPVerb -ne [Microsoft.PowerShell.Commands.WebRequestMethod]::Post)) -and ($HTTPVerb -ne [Microsoft.PowerShell.Commands.WebRequestMethod]::Delete))
 {
-    # PUT, DELETE, PATCH, etc. have to use a X-HTTP-Method header, 
+    # PUT, PATCH, etc. have to use a X-HTTP-Method header, 
     # with POST as the real verb.
     $request.Method = [Microsoft.PowerShell.Commands.WebRequestMethod]::Post
     $request.Headers.Add("X-HTTP-Method", $HTTPVerb)
