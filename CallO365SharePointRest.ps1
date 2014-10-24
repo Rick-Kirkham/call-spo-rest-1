@@ -11,8 +11,8 @@
 	.PARAMETER HTTPVerb
 	Specifies how the REST API should be called. Default is GET.
 
-    .PARAMETER BodyFile 
-    Specifies the path and name of the file that contains the body of the request.
+	.PARAMETER BodyFile 
+	Specifies the path and name of the file that contains the body of the request.
 
 	.EXAMPLE
 		CallO365SharePointRest.ps1 -api "https://contoso.sharepoint.com/_api/lists" -username "admin@contoso.onmicrosoft.com"
